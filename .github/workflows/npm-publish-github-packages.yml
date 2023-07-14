@@ -30,23 +30,10 @@ jobs:
           git config --global user.name "${{ vars.NAME }}"
 
           npm version ${{ github.event.inputs.version }}
-          git push
-
-  tag:
-    needs: versioning
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Tag Push
-        run: |
-          echo "@itcode.dev/eslint-config 태그 생성"
-
           git push origin --tag
 
   publish:
-    needs: tag
+    needs: versioning
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
