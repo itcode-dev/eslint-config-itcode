@@ -4,37 +4,12 @@
 name: itcode-dev/eslint-config NPM Publish
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        type: choice
-        description: 업데이트할 버전 선택
-        required: true
-        options:
-          - patch
-          - minor
-          - major
+  push:
+    tags:
+      - "v*"
 
 jobs:
-  versioning:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Version Update
-        run: |
-          echo "@itcode.dev/eslint-config ${{ github.event.inputs.version }} 업그레이드"
-
-          git config --global user.email "${{ vars.EMAIL }}"
-          git config --global user.name "${{ vars.NAME }}"
-
-          npm version ${{ github.event.inputs.version }}
-          git push origin --tag
-          git push
-
   publish:
-    needs: versioning
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
