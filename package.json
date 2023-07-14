@@ -6,7 +6,6 @@
 	"repository": "https://github.com/itcode-dev/eslint-config-itcode",
 	"author": "RWB0104 <psj2716@mensakorea.org>",
 	"license": "MIT",
-	"private": false,
 	"packageManager": "yarn@3.6.1",
 	"devDependencies": {
 		"eslint": "^8.44.0"
@@ -21,5 +20,16 @@
 		"eslint-plugin-react-hooks": "^4.6.0",
 		"eslint-plugin-sort-keys-fix": "^1.1.2",
 		"eslint-plugin-unused-imports": "^3.0.0"
+	},
+	"peerDependencies": {
+		"@typescript-eslint/eslint-plugin": "*",
+		"@typescript-eslint/parser": "*",
+		"eslint-config-airbnb": "*",
+		"eslint-plugin-import": "*",
+		"eslint-plugin-jsx-a11y": "*",
+		"eslint-plugin-react": "*",
+		"eslint-plugin-react-hooks": "*",
+		"eslint-plugin-sort-keys-fix": "*",
+		"eslint-plugin-unused-imports": "*"
 	}
 }
