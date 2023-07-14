@@ -1,0 +1,24 @@
+{
+	"name": "@itcode-dev/eslint-config",
+	"description": "itcode.dev ESLint Config",
+	"version": "0.1.0",
+	"main": "index.js",
+	"repository": "https://github.com/itcode-dev/eslint-config-itcode",
+	"author": "RWB0104 <psj2716@mensakorea.org>",
+	"license": "MIT",
+	"packageManager": "yarn@3.6.1",
+	"devDependencies": {
+		"eslint": "^8.44.0"
+	},
+	"dependencies": {
+		"@typescript-eslint/eslint-plugin": "^6.0.0",
+		"@typescript-eslint/parser": "^6.0.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-sort-keys-fix": "^1.1.2",
+		"eslint-plugin-unused-imports": "^3.0.0"
+	}
+}
