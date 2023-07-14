@@ -6,6 +6,7 @@
 	"repository": "https://github.com/itcode-dev/eslint-config-itcode",
 	"author": "RWB0104 <psj2716@mensakorea.org>",
 	"license": "MIT",
+	"private": false,
 	"packageManager": "yarn@3.6.1",
 	"devDependencies": {
 		"eslint": "^8.44.0"
