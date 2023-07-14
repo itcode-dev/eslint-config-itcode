@@ -1,7 +1,7 @@
 .github/
 .vscode/
 .yarn/
-./editorconfig
-./.eslintrc.js
-./.gitattributes
-./.yarnrc.yml
+.editorconfig
+.eslintrc.js
+.gitattributes
+.yarnrc.yml
