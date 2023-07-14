@@ -36,7 +36,7 @@
 ## 사용법
 
 ``` bash
-yarn add -D eslint-config-itcode
+yarn add -D @itcode-dev/eslint-config
 ```
 
 ``` js
