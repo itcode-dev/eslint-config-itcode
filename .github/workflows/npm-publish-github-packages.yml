@@ -1,7 +1,7 @@
 # This workflow will run tests using node and then publish a package to GitHub Packages when a release is created
 # For more information see: https://docs.github.com/en/actions/publishing-packages/publishing-nodejs-packages
 
-name: @itcode.dev/eslint-config NPM Publish
+name: itcode-dev/eslint-config NPM Publish
 
 on:
   workflow_dispatch:
@@ -11,28 +11,54 @@ on:
         description: 업데이트할 버전 선택
         required: true
         options:
-        - major
-        - minor
-        - patch
+          - patch
+          - minor
+          - major
 
 jobs:
   versioning:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-      - uses: actions/checkout@v3
-      
+        uses: actions/checkout@v3
+
       - name: Version Update
-      - id: upgrade
         run: |
           echo "@itcode.dev/eslint-config ${{ github.event.inputs.version }} 업그레이드"
-          
-          echo "::set-output name=oldver::$(node -p "require('./package.json').version")"
-          
-          git version ${{ github.event.inputs.version }}
+
+          git config --global user.email "${{ vars.EMAIL }}"
+          git config --global user.name "${{ vars.NAME }}"
+
+          npm version ${{ github.event.inputs.version }}
           git push
-          
-          echo "::set-output name=newver::$(node -p "require('./package.json').version")"
-          
-          echo "📌 v${{ steps.upgrade.outputs.oldver }}"
-          echo "⬆️ v${{ steps.upgrade.outputs.newver }}"
+
+  tag:
+    needs: versioning
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Tag Push
+        run: |
+          echo "@itcode.dev/eslint-config 태그 생성"
+
+          git push origin --tag
+
+  publish:
+    needs: tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+
+      - name: NPM Publish
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NODE_AUTH_TOKEN}}
