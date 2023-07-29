@@ -36,7 +36,11 @@
 ## 사용법
 
 ``` bash
+# yarn
 yarn add -D @itcode-dev/eslint-config
+
+# yarn berry
+yarn add -D @itcode-dev/eslint-config @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix eslint-plugin-unused-imports
 ```
 
 ``` js
