@@ -80,7 +80,7 @@ module.exports = {
 			}
 		],
 		'import/prefer-default-export': 'off',
-		indent: [ 'error', 'tab' ],
+		indent: [ 'error', 'tab', { SwitchCase: 1 }],
 		'jsx-a11y/click-events-have-key-events': 'off',
 		'jsx-a11y/no-static-element-interactions': 'off',
 		'jsx-quotes': [ 'error', 'prefer-single' ],
