@@ -1,8 +1,8 @@
 # eslint-config-itcode
 
 <p align="center">
-	<a href="https://user-images.githubusercontent.com/50317129/253508242-27af1488-bb0d-46df-9a95-5fbf2e3e9dcc.png" target="_blank" align="center">
-		<img src="https://user-images.githubusercontent.com/50317129/253508242-27af1488-bb0d-46df-9a95-5fbf2e3e9dcc.png" />
+	<a href="https://user-images.githubusercontent.com/50317129/260247458-5433aa31-3f43-4725-af70-ab308dcf7464.png" target="_blank" align="center">
+		<img src="https://user-images.githubusercontent.com/50317129/260247458-5433aa31-3f43-4725-af70-ab308dcf7464.png" />
 	</a>
 </p>
 
