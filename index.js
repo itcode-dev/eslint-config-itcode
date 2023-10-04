@@ -4,4 +4,4 @@
  * @author RWB
  * @since 2023.07.14 Fri 14:15:32
  */
-module.exports = { extends: [ './base' ] };
+module.exports = { extends: [ './rules/base' ] };
