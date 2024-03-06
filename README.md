@@ -35,18 +35,48 @@
 
 ## 사용법
 
+- npm
+
+``` bash
+# npm
+npm add -D @itcode-dev/eslint-config
+```
+
+- yarn
+
 ``` bash
 # yarn
 yarn add -D @itcode-dev/eslint-config
+```
 
+- yarn berry
+
+``` bash
 # yarn berry
 yarn add -D @itcode-dev/eslint-config @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix eslint-plugin-unused-imports
 ```
 
+- pnpm
+
+``` bash
+# pnpm
+pnpm add -D @itcode-dev/eslint-config
+```
+
+## 설정 방법
+
 ``` js
 // .eslintrc.js
-{
+module.exports = {
 	extends: [ '@itcode-dev' ],
+	// ...
+}
+```
+
+``` js
+// .eslintrc.json
+{
+	"extends": [ "@itcode-dev" ],
 	// ...
 }
 ```
