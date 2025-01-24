@@ -1,7 +1,7 @@
 .github/
 .vscode/
-.yarn/
+src/
 .editorconfig
-.eslintrc.js
 .gitattributes
-.yarnrc.yml
+rollup.config.js
+tsconfig.json
