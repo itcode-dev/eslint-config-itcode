@@ -3,33 +3,41 @@
 	"description": "itcode.dev ESLint Config",
 	"version": "2.0.1",
 	"main": "index.js",
+	"type": "module",
 	"repository": "https://github.com/itcode-dev/eslint-config-itcode",
 	"author": "RWB0104 <psj2716@mensakorea.org>",
 	"license": "MIT",
-	"packageManager": "yarn@3.6.1",
 	"devDependencies": {
-		"eslint": "^8.44.0"
+		"@rollup/plugin-typescript": "^12.1.2",
+		"@types/eslint-plugin-tailwindcss": "^3.17.0",
+		"@types/eslint__eslintrc": "^2.1.2",
+		"@types/node": "^22.10.10",
+		"eslint": "^9.18.0",
+		"jiti": "^2.4.2",
+		"rollup": "^4.32.0",
+		"tslib": "^2.8.1",
+		"typescript": "^5.7.3"
 	},
 	"dependencies": {
-		"@typescript-eslint/eslint-plugin": "^6.0.0",
-		"@typescript-eslint/parser": "^6.0.0",
-		"eslint-config-airbnb": "^19.0.4",
-		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-jsx-a11y": "^6.7.1",
-		"eslint-plugin-react": "^7.32.2",
-		"eslint-plugin-react-hooks": "^4.6.0",
+		"@stylistic/eslint-plugin": "^2.13.0",
+		"@tanstack/eslint-plugin-query": "^5.64.2",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-react": "^7.37.4",
+		"eslint-plugin-react-hooks": "^5.1.0",
 		"eslint-plugin-sort-keys-fix": "^1.1.2",
-		"eslint-plugin-unused-imports": "^3.0.0"
+		"eslint-plugin-tailwindcss": "^3.18.0",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"typescript-eslint": "^8.21.0"
 	},
 	"peerDependencies": {
-		"@typescript-eslint/eslint-plugin": "*",
-		"@typescript-eslint/parser": "*",
-		"eslint-config-airbnb": "*",
+		"@stylistic/eslint-plugin": "*",
+		"@tanstack/eslint-plugin-query": "*",
 		"eslint-plugin-import": "*",
-		"eslint-plugin-jsx-a11y": "*",
 		"eslint-plugin-react": "*",
 		"eslint-plugin-react-hooks": "*",
 		"eslint-plugin-sort-keys-fix": "*",
-		"eslint-plugin-unused-imports": "*"
+		"eslint-plugin-tailwindcss": "*",
+		"eslint-plugin-unused-imports": "*",
+		"typescript-eslint": "*"
 	}
 }
