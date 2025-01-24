@@ -26,6 +26,18 @@ jobs:
         with:
           version: 8
 
+      - name: Cache dependencies
+        id: cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-eslint-config-itcode-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-eslint-config-itcode
+
+      - name: Dependencies Install
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: pnpm install
+
       - name: build script
         run: pnpm rollup -c
 
