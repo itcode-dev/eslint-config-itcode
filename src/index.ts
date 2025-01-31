@@ -5,7 +5,6 @@
  * @since 2025.01.21 Tue 17:52:54
  */
 
-
 import baseConfig from './base';
 import importConfig from './import';
 import reactHooksConfig from './react-hooks';
@@ -19,7 +18,7 @@ import unusedImportsConfig from './unused-imports';
 import type { Linter } from 'eslint';
 import type { ConfigArray } from 'typescript-eslint';
 
-interface Config
+interface Configs
 {
 	baseConfig: Linter.Config[];
 	importConfig: Linter.Config[];
@@ -32,16 +31,24 @@ interface Config
 	unusedImportsConfig: Linter.Config[];
 }
 
-const config: Config = {
-	baseConfig,
-	importConfig,
-	reactHooksConfig,
-	sortKeysFixConfig,
-	stylisticConfig,
-	tailwindcssConfig,
-	tanstackConfig,
-	tseslintConfig,
-	unusedImportsConfig
+interface ItcodeConfig
+{
+	rules?: [];
+	configs: Configs;
+}
+
+const itcodeConfig: ItcodeConfig = {
+	configs: {
+		baseConfig,
+		importConfig,
+		reactHooksConfig,
+		sortKeysFixConfig,
+		stylisticConfig,
+		tailwindcssConfig,
+		tanstackConfig,
+		tseslintConfig,
+		unusedImportsConfig
+	}
 };
 
-export default config;
+export default itcodeConfig;
