@@ -2,11 +2,20 @@
 	"name": "@itcode-dev/eslint-config",
 	"description": "itcode.dev ESLint Config",
 	"version": "3.0.0-pre3",
-	"main": "index.js",
 	"type": "module",
 	"repository": "https://github.com/itcode-dev/eslint-config-itcode",
 	"author": "RWB0104 <psj2716@mensakorea.org>",
 	"license": "MIT",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/types/index.d.ts",
+	"exports": {
+		".": {
+			"require": "./dist/index.cjs",
+			"import": "./dist/index.js",
+			"types": "./dist/types/index.d.ts"
+		}
+	},
 	"devDependencies": {
 		"@rollup/plugin-typescript": "^12.1.2",
 		"@types/eslint-plugin-tailwindcss": "^3.17.0",

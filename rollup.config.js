@@ -1,11 +1,14 @@
 import typescript from '@rollup/plugin-typescript';
 
+/** @type {import('rollup').RollupOptions} */
 const config = {
 	input: './src/index.ts',
 	output: [
 		{
-			file: './dist/index.js',
+			dir: './dist',
 			format: 'es',
+			preserveModules: true,
+			preserveModulesRoot: './src',
 			sourcemap: false
 		},
 		{

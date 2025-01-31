@@ -19,9 +19,9 @@ export default [
 			}
 		}
 	},
-	...itcodeConfig.configs.baseConfig,
-	...itcodeConfig.configs.importConfig,
-	...itcodeConfig.configs.sortKeysFixConfig,
-	...itcodeConfig.configs.stylisticConfig,
-	...itcodeConfig.configs.tseslintConfig
+	...itcodeConfig.baseConfig,
+	...itcodeConfig.importConfig,
+	...itcodeConfig.sortKeysFixConfig,
+	...itcodeConfig.stylisticConfig,
+	...itcodeConfig.tseslintConfig
 ];
