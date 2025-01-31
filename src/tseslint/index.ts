@@ -9,7 +9,7 @@ import tseslint from 'typescript-eslint';
 
 import type { ConfigArray } from 'typescript-eslint';
 
-export default [ {
+const config: ConfigArray = [ {
 	files: [
 		'**/*.ts',
 		'**/*.tsx',
@@ -135,4 +135,6 @@ export default [ {
 		// catch에서 에러는 unknown 타입을 활용하도록 강제
 		'@typescript-eslint/use-unknown-in-catch-callback-variable': 'error'
 	}
-} ] satisfies ConfigArray;
+} ];
+
+export default config;

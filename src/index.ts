@@ -5,6 +5,7 @@
  * @since 2025.01.21 Tue 17:52:54
  */
 
+
 import baseConfig from './base';
 import importConfig from './import';
 import reactHooksConfig from './react-hooks';
@@ -15,27 +16,32 @@ import tanstackConfig from './tanstack';
 import tseslintConfig from './tseslint';
 import unusedImportsConfig from './unused-imports';
 
-export default {
-	all: [
-		...baseConfig,
-		...importConfig,
-		...reactHooksConfig,
-		...sortKeysFixConfig,
-		...stylisticConfig,
-		...tailwindcssConfig,
-		...tanstackConfig,
-		...tseslintConfig,
-		...unusedImportsConfig
-	],
-	configs: {
-		baseConfig,
-		importConfig,
-		reactHooksConfig,
-		sortKeysFixConfig,
-		stylisticConfig,
-		tailwindcssConfig,
-		tanstackConfig,
-		tseslintConfig,
-		unusedImportsConfig
-	}
+import type { Linter } from 'eslint';
+import type { ConfigArray } from 'typescript-eslint';
+
+interface Config
+{
+	baseConfig: Linter.Config[];
+	importConfig: Linter.Config[];
+	reactHooksConfig: Linter.Config[];
+	sortKeysFixConfig: Linter.Config[];
+	stylisticConfig: Linter.Config[];
+	tailwindcssConfig: Linter.Config[];
+	tanstackConfig: Linter.Config[];
+	tseslintConfig: ConfigArray;
+	unusedImportsConfig: Linter.Config[];
+}
+
+const config: Config = {
+	baseConfig,
+	importConfig,
+	reactHooksConfig,
+	sortKeysFixConfig,
+	stylisticConfig,
+	tailwindcssConfig,
+	tanstackConfig,
+	tseslintConfig,
+	unusedImportsConfig
 };
+
+export default config;
