@@ -1,4 +1,4 @@
-# eslint-config-itcode
+# @itcode-dev/eslint-config
 
 <p align="center">
 	<a href="https://user-images.githubusercontent.com/50317129/260247458-5433aa31-3f43-4725-af70-ab308dcf7464.png" target="_blank" align="center">
@@ -14,16 +14,22 @@
 
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
   - Import 구문 관련 ESLint 플러그인
+- [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next)
+  - Next.js 관련 ESLint 플러그인
+- [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react)
+  - React 관련 ESLint 플러그인
 - [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks)
   - React Hook 관련 ESLint 플러그인
 - [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix)
-  - 정렬 관련 ESLint 플러그
+  - 정렬 관련 ESLint 플러그인
+- [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin)
+  - stylistic ESLint 플러그인
 - [eslint-plugin-tailwindcss](https://www.npmjs.com/package/eslint-plugin-tailwindcss)
   - TailwindCSS 관련 ESLint 플러그인
 - [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
-  - TailwindCSS 관련 ESLint 플러그인
+  - react-query 관련 ESLint 플러그인
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint)
-  - 미사용 구문 관련 ESLint 플러그인
+  - TypeScript 관련 ESLint 플러그인
 - [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports)
   - 미사용 구문 관련 ESLint 플러그인
 
@@ -49,7 +55,7 @@ yarn add -D @itcode-dev/eslint-config
 
 ``` bash
 # yarn berry
-yarn add -D @itcode-dev/eslint-config eslint-plugin-import eslint-plugin-react-hooks eslint-plugin-sort-keys-fix eslint-plugin-tailwindcss @tanstack/eslint-plugin-query typescript-eslint eslint-plugin-unused-imports
+yarn add -D @itcode-dev/eslint-config eslint-plugin-import @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix eslint-plugin-tailwindcss @tanstack/eslint-plugin-query typescript-eslint eslint-plugin-unused-imports
 ```
 
 - pnpm
@@ -60,6 +66,20 @@ pnpm add -D @itcode-dev/eslint-config
 ```
 
 ## 설정 방법
+
+| name                  | description                                                                                       |
+| :-------------------- | :------------------------------------------------------------------------------------------------ |
+| `baseConfig`          | ESLint 설정                                                                                       |
+| `importConfig`        | [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) 설정                   |
+| `nextConfig`          | [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next) 설정           |
+| `reactConfig`         | [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) 설정                     |
+| `reactHooksConfig`    | [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) 설정         |
+| `sortKeysFixConfig`   | [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix) 설정     |
+| `stylisticConfig`     | [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) 설정           |
+| `tailwindcssConfig`   | [eslint-plugin-tailwindcss](https://www.npmjs.com/package/eslint-plugin-tailwindcss) 설정         |
+| `tanstackConfig`      | [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query) 설정 |
+| `tseslintConfig`      | [typescript-eslint](https://www.npmjs.com/package/typescript-eslint) 설정                         |
+| `unusedImportsConfig` | [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports) 설정   |
 
 ``` js
 import itcodeConfig from '@itcode-dev/eslint-config'
@@ -254,6 +274,165 @@ export default {
 				warnOnUnassignedImports: true
 			}
 		]
+	}
+} satisfies Linter.Config;
+```
+
+### eslint-plugin-next 설정
+
+``` ts
+import pluginNext from '@next/eslint-plugin-next';
+
+import type { Linter } from 'eslint';
+
+export default {
+	plugins: { '@next': pluginNext },
+	rules: {
+		// font-display 설정을 통한 폰트 로드 제어 방식 강제
+		'@next/google-font-display': 'error',
+		// Google Fonts pre-load 강제
+		'@next/google-font-preconnect': 'error',
+		// 인라인 script id 강제
+		'@next/inline-script-id': 'error',
+		// GA 적용 시 next/script 사용 강제
+		'@next/next-script-for-ga': 'error',
+		// 모듈 변수 할당 방지
+		'@next/no-assign-module-variable': 'error',
+		// 비동기 CSR 컴포넌트 방지
+		'@next/no-async-client-component': 'error',
+		// beforeInteractive 스크립트는 head 안에 위치하도록 강제
+		'@next/no-before-interactive-script-outside-document': 'error',
+		// style 태그 방지
+		'@next/no-css-tags': 'error',
+		// document 컴포넌트 import 방지
+		'@next/no-document-import-in-page': 'error',
+		// 헤드 중복 방지
+		'@next/no-duplicate-head': 'error',
+		// head 대신 next/head 사용 강제
+		'@next/no-head-element': 'error',
+		// _document에서 next/head 사용 방지
+		'@next/no-head-import-in-document': 'error',
+		// next/link 사용 강제
+		'@next/no-html-link-for-pages': 'error',
+		// next/image 사용 강제
+		'@next/no-img-element': 'error',
+		// 페이지 내 폰트 설정 방지
+		'@next/no-page-custom-font': 'error',
+		// next/head 내에 next/script 컴포넌트 사용 방지
+		'@next/no-script-component-in-head': 'error',
+		// _document 내에 styled-jsx 선언 방지
+		'@next/no-styled-jsx-in-document': 'error',
+		// 비동기 script 강제
+		'@next/no-sync-scripts': 'error',
+		// 페이지별 title은 next/head를 사용하도록 강제
+		'@next/no-title-in-document-head': 'error',
+		// 오타 방지
+		'@next/no-typos': 'error',
+		// 불필요한 Polyfill.io 스크립트 방지
+		'@next/no-unwanted-polyfillio': 'error'
+	}
+} satisfies Linter.Config;
+```
+
+### eslint-plugin-react 설정
+
+``` ts
+import pluginReact from 'eslint-plugin-react';
+
+import type { Linter } from 'eslint';
+
+export default {
+	plugins: { '@react': pluginReact },
+	rules: {
+		// boolean은 반드시 isBoolean 형태로 표기됨
+		'@react/boolean-prop-naming': 'error',
+		// 버튼은 반드시 명시적인 타입을 가지도록 강제
+		'@react/button-has-type': 'error',
+		// 컴포넌트는 항상 DisplayName를 가짐
+		'@react/display-name': 'error',
+		// 컴포넌트는 반드시 함수형으로 선언됨
+		'@react/function-component-definition': [
+			'error',
+			'function'
+		],
+		// useState의 get, set 객체명은 대칭적으로 구성됨
+		'@react/hook-use-state': 'error',
+		// boolean 프로퍼티는 암시적 표현 강제
+		'@react/jsx-boolean-value': [
+			'error',
+			'never'
+		],
+		// JSX는 반드시 .jsx 혹은 .tsx 확장자를 가짐
+		'@react/jsx-filename-extension': [
+			'error',
+			{
+				extensions: [
+					'.jsx',
+					'.tsx'
+				]
+			}
+		],
+		// 핸들러 메서드명은 반드시 handle이 접두사로 포함됨
+		'@react/jsx-handler-names': [
+			'error',
+			'always'
+		],
+		// JSX 반복문 시, key 프로퍼티를 반드시 포함하도록 강제
+		'@react/jsx-key': 'error',
+		// 주석이 텍스트 노드에서 사용되는 것을 방지함
+		'@react/jsx-no-comment-textnodes': 'error',
+		// 불필요한 재렌더링을 유발하는 값 할당 방지
+		'@react/jsx-no-constructed-context-values': 'error',
+		// 중복 프로퍼티 방지
+		'@react/jsx-no-duplicate-props': 'error',
+		// a태그 취약점 방지
+		'@react/jsx-no-target-blank': 'error',
+		// 정의되지 않은 컴포넌트 호출 방지
+		'@react/jsx-no-undef': 'error',
+		// 불필요한 프래그먼트 방지
+		'@react/jsx-no-useless-fragment': 'error',
+		// 중복 스프레드 프로퍼티 할당 방지
+		'@react/jsx-props-no-spread-multi': 'error',
+		// 미사용 JSX 방지
+		'@react/jsx-uses-vars': 'error',
+		// 이전 상태 기반 변경 시, 메서드의 인자로 참조하도록 강제
+		'@react/no-access-state-in-setstate': 'error',
+		// children을 프로퍼티로 전달하는 것을 방지
+		'@react/no-children-prop': 'error',
+		// dangerouslySetInnerHTML 프로퍼티와 children 병행 금지
+		'@react/no-danger-with-children': 'error',
+		// deprecated 문법 사용 방지
+		'@react/no-deprecated': 'error',
+		// state 직접 변경 방지
+		'@react/no-direct-mutation-state': 'error',
+		// findDOMNode 메서드 사용 방지
+		'@react/no-find-dom-node': 'error',
+		// 유효하지 않은 HTML 속성 사용 방지
+		'@react/no-invalid-html-attribute': 'error',
+		// isMount 메서드 사용 방지
+		'@react/no-is-mounted': 'error',
+		// 컴포넌트의 반환값을 변수로 사용하지 않도록 방지
+		'@react/no-render-return-value': 'error',
+		// 함수형 컴포넌트에서 this 호출 방지
+		'@react/no-this-in-sfc': 'error',
+		// 오타 방지
+		'@react/no-typos': 'error',
+		// 문자열 이스케이핑 강제
+		'@react/no-unescaped-entitie': 'error',
+		// 알려지지 않은 프로퍼티 사용 방지
+		'@react/no-unknown-property': 'error',
+		// 미사용 프로퍼티 선언 방지
+		'@react/no-unused-prop-types': 'error',
+		// 미사용 상태 선언 방지
+		'@react/no-unused-state': 'error',
+		// 프로퍼티 수정 방지
+		'@react/prefer-read-only-props': 'error',
+		// 함수형 컴포넌트 강제
+		'@react/prefer-stateless-function': 'error',
+		// 프로퍼티 타입 선언 강제
+		'@react/prop-types': 'error',
+		// children을 가질 수 없는 DOM에 children 할당 방지
+		'@react/void-dom-elements-no-children': 'error'
 	}
 } satisfies Linter.Config;
 ```
