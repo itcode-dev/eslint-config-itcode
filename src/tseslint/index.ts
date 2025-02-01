@@ -6,7 +6,8 @@
  */
 
 import tseslint from 'typescript-eslint';
-import {ConfigArray} from 'typescript-eslint';
+
+import type { ConfigArray } from 'typescript-eslint';
 
 const config: ConfigArray[number] = {
 	files: [
