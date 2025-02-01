@@ -11,7 +11,7 @@ import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	plugins: { '@sort-keys-fix': pluginSortKeysFix },
 	rules: { '@sort-keys-fix/sort-keys-fix': 'error' }
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

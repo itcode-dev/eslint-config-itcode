@@ -9,7 +9,7 @@ import stylistic from '@stylistic/eslint-plugin';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	plugins: { '@stylistic': stylistic },
 	rules: {
 		// 배열 아이템이 3개 이상이라면, 브라켓에 줄바꿈 추가
@@ -337,4 +337,4 @@ export default [ {
 			'inside'
 		]
 	}
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

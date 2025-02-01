@@ -9,7 +9,7 @@ import pluginUnusedImports from 'eslint-plugin-unused-imports';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	plugins: { '@unused-imports': pluginUnusedImports },
 	rules: { '@unused-imports/no-unused-imports': 'error' }
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

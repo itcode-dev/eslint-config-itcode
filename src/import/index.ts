@@ -11,7 +11,7 @@ import pluginImport from 'eslint-plugin-import';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	plugins: { '@import': pluginImport },
 	rules: {
 		// 기본 가져오기 유효성 검증
@@ -70,4 +70,4 @@ export default [ {
 			}
 		]
 	}
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

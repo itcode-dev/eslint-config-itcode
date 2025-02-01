@@ -9,7 +9,7 @@ import pluginTailwindcss from 'eslint-plugin-tailwindcss';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	plugins: { '@tailwindcss': pluginTailwindcss },
 	rules: {
 		// className 정렬 강제
@@ -25,4 +25,4 @@ export default [ {
 		// 불필요한 선언 방식 방지
 		'@tailwindcss/no-unnecessary-arbitrary-value': 'error'
 	}
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

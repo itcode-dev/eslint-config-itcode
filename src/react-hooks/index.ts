@@ -11,7 +11,7 @@ import pluginReactHooks from 'eslint-plugin-react-hooks';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	files: [
 		'**/*.jsx',
 		'**/*.tsx'
@@ -27,4 +27,4 @@ export default [ {
 		// 안정적인 QueryClient 선언 강제
 		'@tanstack/query/stable-query-client': 'error'
 	}
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

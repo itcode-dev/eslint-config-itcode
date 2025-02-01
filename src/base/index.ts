@@ -7,7 +7,7 @@
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	// Override or add rules here
 	rules: {
 		// 가능하다면, 애로우 메서드는 중괄호를 묶지 않고 반환함
@@ -116,4 +116,4 @@ export default [ {
 		// 방지함, 요다 표현을
 		yoda: 'error'
 	}
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;

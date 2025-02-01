@@ -20,15 +20,15 @@ import type { ConfigArray } from 'typescript-eslint';
 
 interface Configs
 {
-	baseConfig: Linter.Config[];
-	importConfig: Linter.Config[];
-	reactHooksConfig: Linter.Config[];
-	sortKeysFixConfig: Linter.Config[];
-	stylisticConfig: Linter.Config[];
-	tailwindcssConfig: Linter.Config[];
-	tanstackConfig: Linter.Config[];
-	tseslintConfig: ConfigArray;
-	unusedImportsConfig: Linter.Config[];
+	baseConfig: Linter.Config;
+	importConfig: Linter.Config;
+	reactHooksConfig: Linter.Config;
+	sortKeysFixConfig: Linter.Config;
+	stylisticConfig: Linter.Config;
+	tailwindcssConfig: Linter.Config;
+	tanstackConfig: Linter.Config;
+	tseslintConfig: ConfigArray[number];
+	unusedImportsConfig: Linter.Config;
 }
 
 interface ItcodeConfig

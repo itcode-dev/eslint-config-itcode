@@ -9,7 +9,7 @@ import pluginQuery from '@tanstack/eslint-plugin-query';
 
 import type { Linter } from 'eslint';
 
-export default [ {
+export default {
 	plugins: { '@tanstack/query': pluginQuery },
 	rules: {
 		// 철저한 디펜던시 강제
@@ -21,4 +21,4 @@ export default [ {
 		// 안정적인 QueryClient 선언 강제
 		'@tanstack/query/stable-query-client': 'error'
 	}
-} ] satisfies Linter.Config[];
+} satisfies Linter.Config;
