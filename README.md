@@ -350,10 +350,13 @@ export default {
 		'@react/button-has-type': 'error',
 		// 컴포넌트는 항상 DisplayName를 가짐
 		'@react/display-name': 'error',
-		// 컴포넌트는 반드시 함수형으로 선언됨
+		// 기명 컴포넌트는 함수형으로, 익명 컴포넌트는 애로우 메서드로 강제
 		'@react/function-component-definition': [
 			'error',
-			'function'
+			{
+				namedComponents: 'function-declaration',
+				unnamedComponents: 'arrow-function'
+			}
 		],
 		// useState의 get, set 객체명은 대칭적으로 구성됨
 		'@react/hook-use-state': 'error',
