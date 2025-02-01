@@ -43,11 +43,8 @@ export default {
 				]
 			}
 		],
-		// 핸들러 메서드명은 반드시 handle이 접두사로 포함됨
-		'@react/jsx-handler-names': [
-			'error',
-			'always'
-		],
+		// 핸들러 메서드 및 프로퍼티 명칭 규약 강제
+		'@react/jsx-handler-names': 'error',
 		// JSX 반복문 시, key 프로퍼티를 반드시 포함하도록 강제
 		'@react/jsx-key': 'error',
 		// 주석이 텍스트 노드에서 사용되는 것을 방지함
