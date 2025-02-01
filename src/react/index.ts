@@ -86,7 +86,7 @@ export default {
 		// 오타 방지
 		'@react/no-typos': 'error',
 		// 문자열 이스케이핑 강제
-		'@react/no-unescaped-entitie': 'error',
+		'@react/no-unescaped-entities': 'error',
 		// 알려지지 않은 프로퍼티 사용 방지
 		'@react/no-unknown-property': 'error',
 		// 미사용 프로퍼티 선언 방지
