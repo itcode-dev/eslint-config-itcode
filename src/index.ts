@@ -5,8 +5,6 @@
  * @since 2025.01.21 Tue 17:52:54
  */
 
-import pkg from '../package.json';
-
 import baseConfig from './base';
 import importConfig from './import';
 import nextConfig from './next';
@@ -85,7 +83,7 @@ interface ItcodeConfig
 	/**
 	 * 버전
 	 */
-	version: string;
+	name: string;
 
 	/**
 	 * 설정
@@ -107,7 +105,7 @@ const itcodeConfig: ItcodeConfig = {
 		tseslintConfig,
 		unusedImportsConfig
 	},
-	version: pkg.version
+	name: '@itcode-dev/eslint-config'
 };
 
 export default itcodeConfig;
