@@ -69,7 +69,10 @@ const config: ConfigArray[number] = {
 		// 오용된 new 메서드 사용 방지
 		'@typescript-eslint/no-misused-new': 'error',
 		// 오용된 promise 사용 방지
-		'@typescript-eslint/no-misused-promises': 'error',
+		'@typescript-eslint/no-misused-promises': [
+			'error',
+			{ checksVoidReturn: false }
+		],
 		// 오용된 스프레드 사용 방지
 		'@typescript-eslint/no-misused-spread': 'error',
 		// !와 ?? 연산자 동시 사용 방지
@@ -98,6 +101,8 @@ const config: ConfigArray[number] = {
 		'@typescript-eslint/no-unsafe-type-assertion': 'error',
 		// 불필요한 - 연산자 방지
 		'@typescript-eslint/no-unsafe-unary-minus': 'error',
+		// 미사용 변수 방지
+		'@typescript-eslint/no-unused-vars': 'error',
 		// 무의미한 빈 export 방지
 		'@typescript-eslint/no-useless-empty-export': 'error',
 		// 래퍼 객체 타입 사용 방지
@@ -133,7 +138,9 @@ const config: ConfigArray[number] = {
 		// 메서드를 변수에 할당할 때, this가 올바르게 바인딩되도록 강제
 		'@typescript-eslint/unbound-method': 'error',
 		// catch에서 에러는 unknown 타입을 활용하도록 강제
-		'@typescript-eslint/use-unknown-in-catch-callback-variable': 'error'
+		'@typescript-eslint/use-unknown-in-catch-callback-variable': 'error',
+		// TS는 @typescript-eslint/no-unused-vars 규칙으로 처리
+		'no-unused-vars': 'off'
 	}
 };
 

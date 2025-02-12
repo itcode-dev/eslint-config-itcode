@@ -7,6 +7,7 @@
 
 import baseConfig from './base';
 import importConfig from './import';
+import jestConfig from './jest';
 import nextConfig from './next';
 import reactConfig from './react';
 import reactHooksConfig from './react-hooks';
@@ -31,6 +32,11 @@ interface Configs
 	 * import 설정
 	 */
 	importConfig: Linter.Config;
+
+	/**
+	 * Jest 설정
+	 */
+	jestConfig: Linter.Config;
 
 	/**
 	 * next 설정
@@ -95,6 +101,7 @@ const itcodeConfig: ItcodeConfig = {
 	configs: {
 		baseConfig,
 		importConfig,
+		jestConfig,
 		nextConfig,
 		reactConfig,
 		reactHooksConfig,
