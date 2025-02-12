@@ -32,6 +32,7 @@
 		"@stylistic/eslint-plugin": "^2.13.0",
 		"@tanstack/eslint-plugin-query": "^5.64.2",
 		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-jest": "^28.11.0",
 		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-react-hooks": "^5.1.0",
 		"eslint-plugin-sort-keys-fix": "^1.1.2",
