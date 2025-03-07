@@ -14,6 +14,50 @@
 			"require": "./dist/index.cjs",
 			"import": "./dist/index.js",
 			"types": "./dist/index.d.ts"
+		},
+		"./base": {
+			"import": "./dist/base/index.js",
+			"types": "./dist/base/index.d.ts"
+		},
+		"./import": {
+			"import": "./dist/import/index.js",
+			"types": "./dist/import/index.d.ts"
+		},
+		"./jest": {
+			"import": "./dist/jest/index.js",
+			"types": "./dist/jest/index.d.ts"
+		},
+		"./next": {
+			"import": "./dist/next/index.js",
+			"types": "./dist/next/index.d.ts"
+		},
+		"./react": {
+			"import": "./dist/react/index.js",
+			"types": "./dist/react/index.d.ts"
+		},
+		"./react-hooks": {
+			"import": "./dist/react-hooks/index.js",
+			"types": "./dist/react-hooks/index.d.ts"
+		},
+		"./sort-keys-fix": {
+			"import": "./dist/sort-keys-fix/index.js",
+			"types": "./dist/sort-keys-fix/index.d.ts"
+		},
+		"./stylistic": {
+			"import": "./dist/stylistic/index.js",
+			"types": "./dist/stylistic/index.d.ts"
+		},
+		"./tanstack": {
+			"import": "./dist/tanstack/index.js",
+			"types": "./dist/tanstack/index.d.ts"
+		},
+		"./tseslint": {
+			"import": "./dist/tseslint/index.js",
+			"types": "./dist/tseslint/index.d.ts"
+		},
+		"./unused-imports": {
+			"import": "./dist/unused-imports/index.js",
+			"types": "./dist/unused-imports/index.d.ts"
 		}
 	},
 	"devDependencies": {
