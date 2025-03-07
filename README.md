@@ -93,6 +93,15 @@ module.expors = [
 ]
 ```
 
+``` js
+import baseConfig from '@itcode-dev/eslint-config/base'
+
+// eslint.config.js
+module.expors = [
+  baseConfig
+]
+```
+
 ## 설정 세부사항
 
 ### ESLint 기본 설정
