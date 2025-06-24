@@ -1,6 +1,10 @@
 import tseslint from 'typescript-eslint';
 
-import itcodeConfig from './src';
+import baseConfig from './src/base';
+import importConfig from './src/import';
+import sortKeysFixConfig from './src/sort-keys-fix';
+import stylisticConfig from './src/stylistic';
+import tseslintConfig from './src/tseslint';
 
 export default [
 	{ ignores: [ 'dist/**/*' ] },
@@ -19,9 +23,9 @@ export default [
 			}
 		}
 	},
-	itcodeConfig.configs.baseConfig,
-	itcodeConfig.configs.importConfig,
-	itcodeConfig.configs.sortKeysFixConfig,
-	itcodeConfig.configs.stylisticConfig,
-	itcodeConfig.configs.tseslintConfig
+	baseConfig,
+	importConfig,
+	sortKeysFixConfig,
+	stylisticConfig,
+	tseslintConfig
 ];
