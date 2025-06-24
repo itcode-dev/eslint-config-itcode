@@ -218,8 +218,7 @@ export default {
 		'@stylistic/object-property-newline': [
 			'error',
 			{
-				allowAllPropertiesOnSameLine: false,
-				allowMultiplePropertiesPerLine: false
+				allowAllPropertiesOnSameLine: false
 			}
 		],
 		// 불필요한 블럭 패딩 방지
