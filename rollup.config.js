@@ -1,3 +1,4 @@
+import common from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript';
 
 /** @type {import('rollup').RollupOptions} */
@@ -17,7 +18,10 @@ const config = {
 			sourcemap: false
 		}
 	],
-	plugins: [ typescript() ]
+	plugins: [
+		common(),
+		typescript()
+	]
 };
 
 export default [ config ];
