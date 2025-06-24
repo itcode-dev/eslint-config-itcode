@@ -833,9 +833,7 @@ export default {
 		// 오브젝트 요소 줄바꿈 규칙 강제
 		'@stylistic/object-property-newline': [
 			'error',
-			{
-				allowAllPropertiesOnSameLine: false
-			}
+			{ allowAllPropertiesOnSameLine: false }
 		],
 		// 불필요한 블럭 패딩 방지
 		'@stylistic/padded-blocks': [
