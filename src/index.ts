@@ -6,6 +6,7 @@
  */
 
 import baseConfig from './base';
+import betterTailwindcssConfig from './better-tailwindcss';
 import importConfig from './import';
 import jestConfig from './jest';
 import nextConfig from './next';
@@ -13,7 +14,6 @@ import reactConfig from './react';
 import reactHooksConfig from './react-hooks';
 import sortKeysFixConfig from './sort-keys-fix';
 import stylisticConfig from './stylistic';
-import tailwindcssConfig from './tailwindcss';
 import tanstackConfig from './tanstack';
 import tseslintConfig from './tseslint';
 import unusedImportsConfig from './unused-imports';
@@ -27,6 +27,11 @@ interface Configs
 	 * 기본 설정
 	 */
 	baseConfig: Linter.Config;
+
+	/**
+	 * TailwindCSS 설정
+	 */
+	betterTailwindcssConfig: Linter.Config;
 
 	/**
 	 * import 설정
@@ -64,11 +69,6 @@ interface Configs
 	stylisticConfig: Linter.Config;
 
 	/**
-	 * TailwindCSS 설정
-	 */
-	tailwindcssConfig: Linter.Config;
-
-	/**
 	 * react-query 설정
 	 */
 	tanstackConfig: Linter.Config;
@@ -100,6 +100,7 @@ interface ItcodeConfig
 const itcodeConfig: ItcodeConfig = {
 	configs: {
 		baseConfig,
+		betterTailwindcssConfig,
 		importConfig,
 		jestConfig,
 		nextConfig,
@@ -107,7 +108,6 @@ const itcodeConfig: ItcodeConfig = {
 		reactHooksConfig,
 		sortKeysFixConfig,
 		stylisticConfig,
-		tailwindcssConfig,
 		tanstackConfig,
 		tseslintConfig,
 		unusedImportsConfig
