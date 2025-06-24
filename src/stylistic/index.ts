@@ -68,6 +68,11 @@ export default {
 			'error',
 			'never'
 		],
+		// 메서드 파라미터 한 줄 강제
+		'@stylistic/function-call-argument-newline': [
+			'error',
+			'never'
+		],
 		// 대체 누가 메서드를 fn ()로 호출함?
 		'@stylistic/function-call-spacing': 'error',
 		// 파라미터 한 줄 강제
@@ -89,6 +94,8 @@ export default {
 			'error',
 			'tab'
 		],
+		// JSX 내 공백 적용
+		'@stylistic/jsx-child-element-spacing': 'error',
 		// JSX 클로징 브라켓 위치가 태그 위치에 의존하도록 강제
 		'@stylistic/jsx-closing-bracket-location': 'error',
 		// JSX 클로징 태그 위치가 태그 위치에 의존하도록 강제
@@ -128,6 +135,8 @@ export default {
 			'error',
 			{ when: 'multiline' }
 		],
+		// 하나의 라인에 하나의 JSX 표현 강제
+		'@stylistic/jsx-one-expression-per-line': 'error',
 		// JSX 프로퍼티 다중 공백 제거
 		'@stylistic/jsx-props-no-multi-spaces': 'error',
 		// JSX 프로퍼티 따옴표 더블 강제
@@ -217,10 +226,7 @@ export default {
 		// 오브젝트 요소 줄바꿈 규칙 강제
 		'@stylistic/object-property-newline': [
 			'error',
-			{
-				allowAllPropertiesOnSameLine: false,
-				allowMultiplePropertiesPerLine: false
-			}
+			{ allowAllPropertiesOnSameLine: false }
 		],
 		// 불필요한 블럭 패딩 방지
 		'@stylistic/padded-blocks': [
