@@ -1,7 +1,7 @@
 {
 	"name": "@itcode-dev/eslint-config",
 	"description": "itcode.dev ESLint Config",
-	"version": "3.4.1",
+	"version": "3.5.0",
 	"type": "module",
 	"repository": "https://github.com/itcode-dev/eslint-config-itcode",
 	"author": "RWB0104 <psj2716@mensakorea.org>",
