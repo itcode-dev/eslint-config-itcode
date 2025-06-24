@@ -65,13 +65,12 @@
 		}
 	},
 	"devDependencies": {
-		"@next/eslint-plugin-next": "^15.1.6",
+		"@next/eslint-plugin-next": "^15.3.4",
 		"@rollup/plugin-typescript": "^12.1.2",
-		"@stylistic/eslint-plugin": "^2.13.0",
+		"@stylistic/eslint-plugin": "^5.0.0",
 		"@tanstack/eslint-plugin-query": "^5.64.2",
-		"@types/eslint-plugin-tailwindcss": "^3.17.0",
-		"@types/eslint__eslintrc": "^2.1.2",
-		"@types/node": "^22.10.10",
+		"@types/eslint__eslintrc": "^3.3.0",
+		"@types/node": "^24.0.3",
 		"eslint": "^9.21.0",
 		"eslint-plugin-better-tailwindcss": "^3.4.1",
 		"eslint-plugin-import": "^2.31.0",
