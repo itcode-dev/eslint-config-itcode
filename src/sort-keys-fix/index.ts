@@ -5,9 +5,7 @@
  * @since 2025.01.24 Fri 16:56:40
  */
 
-/// <reference types="../../types/eslint-plugin-sort-keys-fix" />
-
-import pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
+import * as pluginSortKeysFix from 'eslint-plugin-sort-keys-fix';
 
 import type { Linter } from 'eslint';
 
