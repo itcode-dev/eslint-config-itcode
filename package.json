@@ -66,6 +66,7 @@
 	},
 	"devDependencies": {
 		"@next/eslint-plugin-next": "^15.1.6",
+		"@rollup/plugin-commonjs": "^28.0.6",
 		"@rollup/plugin-typescript": "^12.1.2",
 		"@stylistic/eslint-plugin": "^2.13.0",
 		"@tanstack/eslint-plugin-query": "^5.64.2",
