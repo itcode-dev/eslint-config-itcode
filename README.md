@@ -12,6 +12,8 @@
 
 ## 사용 디펜던시
 
+- [eslint-plugin-better-tailwindcss](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss)
+  - TailwindCSS 관련 ESLint 플러그인
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
   - Import 구문 관련 ESLint 플러그인
 - [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
@@ -26,8 +28,6 @@
   - 정렬 관련 ESLint 플러그인
 - [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin)
   - stylistic ESLint 플러그인
-- [eslint-plugin-tailwindcss](https://www.npmjs.com/package/eslint-plugin-tailwindcss)
-  - TailwindCSS 관련 ESLint 플러그인
 - [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query)
   - react-query 관련 ESLint 플러그인
 - [typescript-eslint](https://www.npmjs.com/package/typescript-eslint)
@@ -57,7 +57,7 @@ yarn add -D @itcode-dev/eslint-config
 
 ``` bash
 # yarn berry
-yarn add -D @itcode-dev/eslint-config eslint-plugin-import eslint-plugin-jest @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix eslint-plugin-tailwindcss @tanstack/eslint-plugin-query typescript-eslint eslint-plugin-unused-imports
+yarn add -D @itcode-dev/eslint-config eslint-plugin-better-tailwindcss eslint-plugin-import eslint-plugin-jest @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix @tanstack/eslint-plugin-query typescript-eslint eslint-plugin-unused-imports
 ```
 
 - pnpm
@@ -69,20 +69,20 @@ pnpm add -D @itcode-dev/eslint-config
 
 ## 설정 방법
 
-| name                  | description                                                                                       |
-| :-------------------- | :------------------------------------------------------------------------------------------------ |
-| `baseConfig`          | ESLint 설정                                                                                       |
-| `importConfig`        | [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) 설정                   |
-| `jestConfig`          | [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) 설정                       |
-| `nextConfig`          | [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next) 설정           |
-| `reactConfig`         | [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) 설정                     |
-| `reactHooksConfig`    | [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) 설정         |
-| `sortKeysFixConfig`   | [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix) 설정     |
-| `stylisticConfig`     | [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) 설정           |
-| `tailwindcssConfig`   | [eslint-plugin-tailwindcss](https://www.npmjs.com/package/eslint-plugin-tailwindcss) 설정         |
-| `tanstackConfig`      | [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query) 설정 |
-| `tseslintConfig`      | [typescript-eslint](https://www.npmjs.com/package/typescript-eslint) 설정                         |
-| `unusedImportsConfig` | [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports) 설정   |
+| name                      | description                                                                                             |
+| :------------------------ | :------------------------------------------------------------------------------------------------------ |
+| `baseConfig`              | ESLint 설정                                                                                             |
+| `betterTailwindcssConfig` | [eslint-plugin-better-tailwindcss](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss) 설정 |
+| `importConfig`            | [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import) 설정                         |
+| `jestConfig`              | [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest) 설정                             |
+| `nextConfig`              | [@next/eslint-plugin-next](https://www.npmjs.com/package/@next/eslint-plugin-next) 설정                 |
+| `reactConfig`             | [eslint-plugin-react](https://www.npmjs.com/package/eslint-plugin-react) 설정                           |
+| `reactHooksConfig`        | [eslint-plugin-react-hooks](https://www.npmjs.com/package/eslint-plugin-react-hooks) 설정               |
+| `sortKeysFixConfig`       | [eslint-plugin-sort-keys-fix](https://www.npmjs.com/package/eslint-plugin-sort-keys-fix) 설정           |
+| `stylisticConfig`         | [@stylistic/eslint-plugin](https://www.npmjs.com/package/@stylistic/eslint-plugin) 설정                 |
+| `tanstackConfig`          | [@tanstack/eslint-plugin-query](https://www.npmjs.com/package/@tanstack/eslint-plugin-query) 설정       |
+| `tseslintConfig`          | [typescript-eslint](https://www.npmjs.com/package/typescript-eslint) 설정                               |
+| `unusedImportsConfig`     | [eslint-plugin-unused-imports](https://www.npmjs.com/package/eslint-plugin-unused-imports) 설정         |
 
 ``` js
 import itcodeConfig from '@itcode-dev/eslint-config'
@@ -220,6 +220,34 @@ export default {
 	}
 } satisfies Linter.Config;
 ```
+
+### eslint-plugin-better-tailwindcss 설정
+
+``` ts
+import pluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
+
+import type { Linter } from 'eslint';
+
+export default {
+	files: [ '**/*.[jt]sx' ],
+	plugins: { '@better-tailwindcss': pluginBetterTailwindcss },
+	rules: {
+		// 클래스 정렬 강제
+		'@better-tailwindcss/enforce-consistent-class-order': 'error',
+		// 일관된 클래스 줄바꿈 강제
+		'@better-tailwindcss/enforce-consistent-line-wrapping': 'error',
+		// 일관된 CSS 변수 호출 강제
+		'@better-tailwindcss/enforce-consistent-variable-syntax': 'error',
+		// 클래스 스타일 충돌 방지
+		'@better-tailwindcss/no-conflicting-classes': 'error',
+		// 클래스 중복 방지
+		'@better-tailwindcss/no-duplicate-classes': 'error',
+		// 불필요 공백 제거
+		'@better-tailwindcss/no-unnecessary-whitespace': 'error'
+	}
+} satisfies Linter.Config;
+```
+
 
 ### eslint-plugin-import 설정
 
@@ -924,32 +952,6 @@ export default {
 			'error',
 			'inside'
 		]
-	}
-} satisfies Linter.Config;
-```
-
-### eslint-plugin-tailwindcss 설정
-
-``` ts
-import pluginTailwindcss from 'eslint-plugin-tailwindcss';
-
-import type { Linter } from 'eslint';
-
-export default {
-	plugins: { '@tailwindcss': pluginTailwindcss },
-	rules: {
-		// className 정렬 강제
-		'@tailwindcss/classnames-order': 'error',
-		// 중첩 - 연산 방지
-		'@tailwindcss/enforces-negative-arbitrary-values': 'error',
-		// 축약형 강제
-		'@tailwindcss/enforces-shorthand': 'error',
-		// TailwindCSS 2 마이그레이션 강제
-		'@tailwindcss/migration-from-tailwind-2': 'error',
-		// 같은 속성을 건드리는 className 방지
-		'@tailwindcss/no-contradicting-classname': 'error',
-		// 불필요한 선언 방식 방지
-		'@tailwindcss/no-unnecessary-arbitrary-value': 'error'
 	}
 } satisfies Linter.Config;
 ```
