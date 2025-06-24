@@ -19,6 +19,10 @@
 			"import": "./dist/base/index.js",
 			"types": "./dist/base/index.d.ts"
 		},
+		"./better-tailwindcss": {
+			"import": "./dist/better-tailwindcss/index.js",
+			"types": "./dist/better-tailwindcss/index.d.ts"
+		},
 		"./import": {
 			"import": "./dist/import/index.js",
 			"types": "./dist/import/index.d.ts"
@@ -69,12 +73,12 @@
 		"@types/eslint__eslintrc": "^2.1.2",
 		"@types/node": "^22.10.10",
 		"eslint": "^9.21.0",
+		"eslint-plugin-better-tailwindcss": "^3.4.1",
 		"eslint-plugin-import": "^2.31.0",
 		"eslint-plugin-jest": "^28.11.0",
 		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-react-hooks": "^5.1.0",
 		"eslint-plugin-sort-keys-fix": "^1.1.2",
-		"eslint-plugin-tailwindcss": "^3.18.0",
 		"eslint-plugin-unused-imports": "^4.1.4",
 		"jiti": "^2.4.2",
 		"rollup": "^4.32.0",
@@ -86,12 +90,12 @@
 		"@next/eslint-plugin-next": "*",
 		"@stylistic/eslint-plugin": "*",
 		"@tanstack/eslint-plugin-query": "*",
+		"eslint-plugin-better-tailwindcss": "*",
 		"eslint-plugin-import": "*",
 		"eslint-plugin-jest": "*",
 		"eslint-plugin-react": "*",
 		"eslint-plugin-react-hooks": "*",
 		"eslint-plugin-sort-keys-fix": "*",
-		"eslint-plugin-tailwindcss": "*",
 		"eslint-plugin-unused-imports": "*",
 		"typescript-eslint": "*"
 	}
