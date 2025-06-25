@@ -19,6 +19,10 @@
 			"import": "./dist/base/index.js",
 			"types": "./dist/base/index.d.ts"
 		},
+		"./better-tailwindcss": {
+			"import": "./dist/better-tailwindcss/index.js",
+			"types": "./dist/better-tailwindcss/index.d.ts"
+		},
 		"./import": {
 			"import": "./dist/import/index.js",
 			"types": "./dist/import/index.d.ts"
