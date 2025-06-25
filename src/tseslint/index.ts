@@ -131,8 +131,6 @@ const config: ConfigArray[number] = {
 		'@typescript-eslint/restrict-plus-operands': 'error',
 		// 템플릿 문자열에서 안전한 타입만 활용되도록 강제
 		'@typescript-eslint/restrict-template-expressions': 'error',
-		// 반환문에서 불필요한 await 방지
-		'@typescript-eslint/return-await': 'error',
 		// boolean 비교 시, 명시적 비교만을 허용함
 		'@typescript-eslint/strict-boolean-expressions': 'error',
 		// 메서드를 변수에 할당할 때, this가 올바르게 바인딩되도록 강제
