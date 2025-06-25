@@ -13,7 +13,6 @@ import reactConfig from './react';
 import reactHooksConfig from './react-hooks';
 import sortKeysFixConfig from './sort-keys-fix';
 import stylisticConfig from './stylistic';
-import tailwindcssConfig from './tailwindcss';
 import tanstackConfig from './tanstack';
 import tseslintConfig from './tseslint';
 import unusedImportsConfig from './unused-imports';
@@ -64,11 +63,6 @@ interface Configs
 	stylisticConfig: Linter.Config;
 
 	/**
-	 * TailwindCSS 설정
-	 */
-	tailwindcssConfig: Linter.Config;
-
-	/**
 	 * react-query 설정
 	 */
 	tanstackConfig: Linter.Config;
@@ -107,7 +101,6 @@ const itcodeConfig: ItcodeConfig = {
 		reactHooksConfig,
 		sortKeysFixConfig,
 		stylisticConfig,
-		tailwindcssConfig,
 		tanstackConfig,
 		tseslintConfig,
 		unusedImportsConfig
