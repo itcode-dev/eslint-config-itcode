@@ -74,7 +74,6 @@
 		"eslint-plugin-react": "^7.37.4",
 		"eslint-plugin-react-hooks": "^5.1.0",
 		"eslint-plugin-sort-keys-fix": "^1.1.2",
-		"eslint-plugin-tailwindcss": "^3.18.0",
 		"eslint-plugin-unused-imports": "^4.1.4",
 		"jiti": "^2.4.2",
 		"rollup": "^4.32.0",
@@ -91,7 +90,6 @@
 		"eslint-plugin-react": "*",
 		"eslint-plugin-react-hooks": "*",
 		"eslint-plugin-sort-keys-fix": "*",
-		"eslint-plugin-tailwindcss": "*",
 		"eslint-plugin-unused-imports": "*",
 		"typescript-eslint": "*"
 	}
