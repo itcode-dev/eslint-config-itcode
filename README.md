@@ -12,6 +12,8 @@
 
 ## 사용 디펜던시
 
+- [eslint-plugin-better-tailwindcss](https://www.npmjs.com/package/eslint-plugin-better-tailwindcss)
+  - TailwindCSS 구문 관련 ESLint 플러그인
 - [eslint-plugin-import](https://www.npmjs.com/package/eslint-plugin-import)
   - Import 구문 관련 ESLint 플러그인
 - [eslint-plugin-jest](https://www.npmjs.com/package/eslint-plugin-jest)
@@ -55,7 +57,7 @@ yarn add -D @itcode-dev/eslint-config
 
 ``` bash
 # yarn berry
-yarn add -D @itcode-dev/eslint-config eslint-plugin-import eslint-plugin-jest @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix @tanstack/eslint-plugin-query typescript-eslint eslint-plugin-unused-imports
+yarn add -D @itcode-dev/eslint-config eslint-plugin-better-tailwindcss eslint-plugin-import eslint-plugin-jest @next/eslint-plugin-next eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-sort-keys-fix @tanstack/eslint-plugin-query typescript-eslint eslint-plugin-unused-imports
 ```
 
 - pnpm
@@ -214,6 +216,32 @@ export default {
 		'sort-keys': 'error',
 		// 방지함, 요다 표현을
 		yoda: 'error'
+	}
+} satisfies Linter.Config;
+```
+
+### eslint-plugin-better-tailwindcss 설정
+
+``` ts
+import pluginBetterTailwindcss from 'eslint-plugin-better-tailwindcss';
+
+import type { Linter } from 'eslint';
+
+export default {
+	plugins: { '@better-tailwindcss': pluginBetterTailwindcss },
+	rules: {
+		// 일관된 클래스 정렬 강제
+		'@better-tailwindcss/enforce-consistent-class-order': 'error',
+		// 일관된 클래스 래핑 강제
+		'@better-tailwindcss/enforce-consistent-line-wrapping': 'error',
+		// 일관된 CSS 변수 호출 방식 강제
+		'@better-tailwindcss/enforce-consistent-variable-syntax': 'error',
+		// 출동하는 클래스 스타일링 방지
+		'@better-tailwindcss/no-conflicting-classes': 'error',
+		// 중복된 클래스 방지
+		'@better-tailwindcss/no-duplicate-classes': 'error',
+		// 불필요 공백 제거
+		'@better-tailwindcss/no-unnecessary-whitespace': 'error'
 	}
 } satisfies Linter.Config;
 ```
@@ -802,10 +830,7 @@ export default {
 		// 오브젝트 요소 줄바꿈 규칙 강제
 		'@stylistic/object-property-newline': [
 			'error',
-			{
-				allowAllPropertiesOnSameLine: false,
-				allowMultiplePropertiesPerLine: false
-			}
+			{ allowAllPropertiesOnSameLine: false }
 		],
 		// 불필요한 블럭 패딩 방지
 		'@stylistic/padded-blocks': [
@@ -1076,8 +1101,6 @@ const config: ConfigArray[number] = {
 		'@typescript-eslint/restrict-plus-operands': 'error',
 		// 템플릿 문자열에서 안전한 타입만 활용되도록 강제
 		'@typescript-eslint/restrict-template-expressions': 'error',
-		// 반환문에서 불필요한 await 방지
-		'@typescript-eslint/return-await': 'error',
 		// boolean 비교 시, 명시적 비교만을 허용함
 		'@typescript-eslint/strict-boolean-expressions': 'error',
 		// 메서드를 변수에 할당할 때, this가 올바르게 바인딩되도록 강제
