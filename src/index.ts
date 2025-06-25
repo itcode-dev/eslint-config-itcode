@@ -6,6 +6,7 @@
  */
 
 import baseConfig from './base';
+import betterTailwindcssConfig from './better-tailwindcss';
 import importConfig from './import';
 import jestConfig from './jest';
 import nextConfig from './next';
@@ -26,6 +27,11 @@ interface Configs
 	 * 기본 설정
 	 */
 	baseConfig: Linter.Config;
+
+	/**
+	 * TailwindCSS 설정
+	 */
+	betterTailwindcssConfig: Linter.Config;
 
 	/**
 	 * import 설정
@@ -94,6 +100,7 @@ interface ItcodeConfig
 const itcodeConfig: ItcodeConfig = {
 	configs: {
 		baseConfig,
+		betterTailwindcssConfig,
 		importConfig,
 		jestConfig,
 		nextConfig,
